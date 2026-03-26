@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Video-Terminbuchung Widget</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="widget" aria-labelledby="widget-title">
+      <section class="video-section">
+        <h1 id="widget-title">Beratungsvideo & Terminbuchung</h1>
+        <p class="subtitle">Video ansehen und direkt einen freien Termin buchen.</p>
+        <div class="video-frame">
+          <iframe
+            src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+            title="Vorstellungsvideo"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen
+          ></iframe>
+        </div>
+      </section>
+
+      <section class="booking-section" aria-labelledby="booking-title">
+        <h2 id="booking-title">Kalender</h2>
+        <p>Wähle ein Datum und anschließend einen freien Zeitraum.</p>
+
+        <label for="appointment-date">Datum</label>
+        <input id="appointment-date" type="date" />
+
+        <div>
+          <h3>Freie Zeitfenster</h3>
+          <div id="slots" class="slots" role="list"></div>
+        </div>
+
+        <form id="booking-form" class="booking-form" novalidate>
+          <label for="name">Name</label>
+          <input id="name" name="name" type="text" required placeholder="Max Mustermann" />
+
+          <label for="email">E-Mail</label>
+          <input id="email" name="email" type="email" required placeholder="name@beispiel.de" />
+
+          <button type="submit">Termin buchen</button>
+        </form>
+
+        <p id="message" class="message" role="status" aria-live="polite"></p>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
